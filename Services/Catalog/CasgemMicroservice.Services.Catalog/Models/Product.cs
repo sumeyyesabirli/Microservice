@@ -6,6 +6,7 @@ namespace CasgemMicroservice.Services.Catalog.Models
     public class Product
     {
         [BsonId]
+        [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string ProductID { get; set; }
         public string ProductName { get; set; }
 

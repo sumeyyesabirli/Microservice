@@ -27,9 +27,10 @@ namespace CasgemMicroservice.Services.Catalog.Services.CategoryServices
             return Response<NoContent>.Success(204);
         }
 
-        public Task<Response<NoContent>> DeleteCategoryAsync(string id)
+        public async Task<Response<NoContent>> DeleteCategoryAsync(string id)
         {
-            throw new NotImplementedException();
+            var value = await _categoryCollection.DeleteOneAsync(x => x.CategoryID == id);
+            return Response<NoContent>.Success(204);
         }
 
         public async Task<Response<List<ResultCategoryDto>>> GetAllCategoryAsync()
@@ -38,14 +39,32 @@ namespace CasgemMicroservice.Services.Catalog.Services.CategoryServices
             return Response<List<ResultCategoryDto>>.Success (_mapper.Map<List<ResultCategoryDto>>(values), 200);
         }
 
-        public Task<Response<ResultCategoryDto>> GetByIdCategoryAsync(string id)
+        public  async Task<Response<ResultCategoryDto>> GetByIdCategoryAsync(string id)
         {
-            throw new NotImplementedException();
+            var value = await _categoryCollection.Find<Category>(x => x.CategoryID == id).FirstOrDefaultAsync();
+            if (value == null)
+            {
+                return Response<ResultCategoryDto>.Fail("böyle bir kategori bulunmadı", 404);
+            }
+            else
+            {
+                return Response<ResultCategoryDto>.Success(_mapper.Map<ResultCategoryDto>(value), 200);
+            }
         }
 
-        public Task<Response<NoContent>> UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto)
+        public async Task<Response<NoContent>> UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto)
         {
-            throw new NotImplementedException();
+            var values = _mapper.Map<Category>(updateCategoryDto);
+            var result = await _categoryCollection.FindOneAndReplaceAsync(x => x.CategoryID == updateCategoryDto.CategoryID, values);
+
+            if (result == null)
+            {
+                return Response<NoContent>.Fail("Güncellenecek veri bulunamadı", 400);
+            }
+            else
+            {
+                return Response<NoContent>.Success(204);
+            }
         }
     }
 }

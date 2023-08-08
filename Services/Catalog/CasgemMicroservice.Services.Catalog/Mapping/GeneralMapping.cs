@@ -1,6 +1,21 @@
-﻿namespace CasgemMicroservice.Services.Catalog.Mapping
+﻿using AutoMapper;
+using CasgemMicroservice.Services.Catalog.Dtos.CategoryDtos;
+using CasgemMicroservice.Services.Catalog.Dtos.ProductDtos;
+using CasgemMicroservice.Services.Catalog.Models;
+
+namespace CasgemMicroservice.Services.Catalog.Mapping
 {
-    public class GeneralMapping
+    public class GeneralMapping:Profile
     {
+        public GeneralMapping()
+        {
+            CreateMap<Category, ResultCategoryDto>().ReverseMap();
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Category, UpdateCategoryDto>().ReverseMap();
+
+            CreateMap<Product, ResultProductDto>().ReverseMap();
+            CreateMap<Product, CreateProductDto>().ReverseMap();
+            CreateMap<Product, UpdateProductDto>().ReverseMap();
+        }
     }
 }
