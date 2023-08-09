@@ -33,11 +33,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cargo", "Cargo", "{729535BA-0C90-473D-A82C-8B1CCDA821F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Catalog", "Services\Catalog\CasgemMicroservice.Services.Catalog\CasgemMicroservice.Services.Catalog.csproj", "{C45C8CCD-2728-432C-8551-08BEB8A0051B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Catalog", "Services\Catalog\CasgemMicroservice.Services.Catalog\CasgemMicroservice.Services.Catalog.csproj", "{C45C8CCD-2728-432C-8551-08BEB8A0051B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Shared", "Shared\CasgemMicroservice.Shared\CasgemMicroservice.Shared.csproj", "{4F957BBE-B752-4A74-A382-5C4B565C2BAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Shared", "Shared\CasgemMicroservice.Shared\CasgemMicroservice.Shared.csproj", "{4F957BBE-B752-4A74-A382-5C4B565C2BAC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.IdentityServer", "IdentityServer\CasgemMicroservice.IdentityServer\CasgemMicroservice.IdentityServer.csproj", "{025D8425-4A78-427B-9ADE-697533E6D7CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.PhotoStock", "Services\PhotoStock\CasgemMicroservice.PhotoStock\CasgemMicroservice.PhotoStock.csproj", "{D1EC149E-667D-48CF-B376-80951371E7D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{025D8425-4A78-427B-9ADE-697533E6D7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{025D8425-4A78-427B-9ADE-697533E6D7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{025D8425-4A78-427B-9ADE-697533E6D7CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1EC149E-667D-48CF-B376-80951371E7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1EC149E-667D-48CF-B376-80951371E7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1EC149E-667D-48CF-B376-80951371E7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1EC149E-667D-48CF-B376-80951371E7D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{C45C8CCD-2728-432C-8551-08BEB8A0051B} = {8D918C75-A206-48F6-90D8-DEB0C498C705}
 		{4F957BBE-B752-4A74-A382-5C4B565C2BAC} = {E6E89FAF-F800-45A9-93C9-4FDD39B490A9}
 		{025D8425-4A78-427B-9ADE-697533E6D7CF} = {6F52E8DB-D7A7-451E-AB26-833FD072DEB4}
+		{D1EC149E-667D-48CF-B376-80951371E7D1} = {395CFA05-FFAE-4EF4-94C8-7D26202C24D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8EF4AC3-C738-46C4-91D5-68A9618EBDCF}
