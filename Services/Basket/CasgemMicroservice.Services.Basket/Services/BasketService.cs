@@ -32,7 +32,7 @@ namespace CasgemMicroservice.Services.Basket.Services
 
         public async Task<Response<bool>> SaveOrUpdate(BasketDto basketDto)
         {
-            var status = await _redisService.GetDb().StringSetAsync(basketDto.UserId, JsonSerializer.Serialize(basketDto));
+            var status = await _redisService.GetDb().StringSetAsync(basketDto.UserID, JsonSerializer.Serialize(basketDto));
             return status ? Response<bool>.Success(204) : Response<bool>.Fail("Sepet güncelleneme veya ekleme yapılamadı", 500);
         }
     }
