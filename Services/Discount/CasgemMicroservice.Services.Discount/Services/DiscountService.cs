@@ -46,9 +46,10 @@ namespace CasgemMicroservice.Services.Discount.Services
             return Response<List<ResultDiscountDto>>.Success(_mapper.Map<List<ResultDiscountDto>>(values), 200);
         }
 
-        public Task<Response<ResultDiscountDto>> GetByIdDiscountCouponsAsync(int id)
+        public async Task<Response<ResultDiscountDto>> GetByIdDiscountCouponsAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _dapperContext.DiscountCouponses.FindAsync(id);
+            return Response<ResultDiscountDto>.Success(_mapper.Map<ResultDiscountDto>(result), 200);
         }
 
         public async Task<Response<NoContent>> UpdateDiscountCouponsAsync(UpdateDiscountDto updateDiscountDto)
