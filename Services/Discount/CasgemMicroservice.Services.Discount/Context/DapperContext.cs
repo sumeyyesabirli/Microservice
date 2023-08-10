@@ -1,18 +1,28 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using CasgemMicroservice.Services.Discount.Models;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace CasgemMicroservice.Services.Discount.Context
 {
-    public class DapperContext
+    public class DapperContext : DbContext
     {
-        private readonly IConfiguration _configuration;
-        private readonly string _connectionstring;
+       // private readonly IConfiguration _configuration;
+       // private readonly string _connectionstring;
 
-        public DapperContext(IConfiguration configuration)
+       // public DapperContext(IConfiguration configuration)
+       // {
+       //     _configuration = configuration;
+       //     _connectionstring = _configuration.GetConnectionString("DefaultConnection");
+       // }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            _configuration = configuration;
-            _connectionstring = _configuration.GetConnectionString("DefaultConnection");
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=CasgemDiscountDb;User=sa;Password=123456Aa*");
         }
-        public IDbConnection CreateConnection() => new SqlConnection(_connectionstring);
+        public DbSet<DiscountCoupons> DiscountCouponses { get; set; }
+     
+
+       // public IDbConnection CreateConnection() => new SqlConnection(_connectionstring);
     }
 }
