@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasgemMicroservice.Services.Order.Core.Application.Dtos.OrderDetailDto
+namespace CasgemMicroservice.Services.Order.Core.Application.Dtos.OrderingDetailDto
 {
-    public class UpdateOrderDetailDto
+    public class ResultOrderingDetailDto
     {
         public int OrderDetailID { get; set; }
         public string ProductId { get; set; }

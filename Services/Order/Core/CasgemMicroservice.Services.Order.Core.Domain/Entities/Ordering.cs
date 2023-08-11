@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CasgemMicroservice.Services.Order.Core.Domain.Entities
 {
-    public class Order
+    public class Ordering
     {
-        public int OrderId { get; set; }
+        public int OrderingId { get; set; }
         public string UserID { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }

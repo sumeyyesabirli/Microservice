@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasgemMicroservice.Services.Order.Core.Application.Dtos.OrderDto
+namespace CasgemMicroservice.Services.Order.Core.Application.Dtos.OrderingDto
 {
-    public class ResultOrderDto
+    public class UpdateOrderingDto
     {
-        public int OrderId { get; set; }
+        public int OrderingId { get; set; }
         public string UserID { get; set; }
         public decimal TotalPrice { get; set; }
-        public DateTime OrderDate { get; set; }
+        public DateTime OrderingDate { get; set; }
     }
 }
