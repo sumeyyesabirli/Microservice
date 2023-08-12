@@ -7,21 +7,21 @@ using MediatR;
 
 namespace CasgemMicroservice.Services.Order.Core.Application.Features.Handlers
 {
-    public class GetAllOrderDetailQueryHandler : IRequestHandler<GetAllOrdeDetailQueryRequest, List<ResultOrderingDetailDto>>
+    public class GetByIdOrderingDetailQueryHandler : IRequestHandler<GetByIdOrderingDetailQueryRequest, ResultOrderingDetailDto>
     {
         private readonly IRepository<OrderDetail> _repository;
-        private readonly IMapper _mapper;
+        private readonly  IMapper _mapper;
 
-        public GetAllOrderDetailQueryHandler(IRepository<OrderDetail> repository, IMapper mapper)
+        public GetByIdOrderingDetailQueryHandler(IRepository<OrderDetail> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<List<ResultOrderingDetailDto>> Handle(GetAllOrdeDetailQueryRequest request, CancellationToken cancellationToken)
+        public async  Task<ResultOrderingDetailDto> Handle(GetByIdOrderingDetailQueryRequest request, CancellationToken cancellationToken)
         {
-            var values = await _repository.GetAllAsync();
-            return _mapper.Map<List<ResultOrderingDetailDto>>(values);
+            var values = await _repository.GetByIdAsync(request.Id);
+            return _mapper.Map<ResultOrderingDetailDto>(values);
         }
     }
 }

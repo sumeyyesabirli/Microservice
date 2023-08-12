@@ -7,21 +7,21 @@ using MediatR;
 
 namespace CasgemMicroservice.Services.Order.Core.Application.Features.Handlers
 {
-    public class GetAllAddressQueryHandler : IRequestHandler<GetAllAddressQueryRequest, List<ResultAdressDto>>
+    public class GetByIdAddressQueryHandler : IRequestHandler<GetByIdAddressQueryRequest, ResultAdressDto>
     {
         private readonly IRepository<Address> _repository;
         private readonly IMapper _mapper;
 
-        public GetAllAddressQueryHandler(IRepository<Address> repository, IMapper mapper)
+        public GetByIdAddressQueryHandler(IRepository<Address> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<List<ResultAdressDto>> Handle(GetAllAddressQueryRequest request, CancellationToken cancellationToken)
+        public async Task<ResultAdressDto> Handle(GetByIdAddressQueryRequest request, CancellationToken cancellationToken)
         {
-            var values = await _repository.GetAllAsync();
-            return _mapper.Map<List<ResultAdressDto>>(values);
+            var values = await _repository.GetByIdAsync(request.Id);
+            return _mapper.Map<ResultAdressDto>(values);
         }
     }
 }
