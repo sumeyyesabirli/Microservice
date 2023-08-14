@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 
 namespace CasgemMicroservice.Services.Order.Core.Application.Interfaces
 {
@@ -13,5 +9,6 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Interfaces
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(T entity);
+        Task<List<T>> GetOrderesById(Expression<Func<T,bool>> filter=null);
     }
 }

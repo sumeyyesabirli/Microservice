@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\IdentityServer\CasgemMicroservice.IdentityServer\CasgemMicroservice.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\..\..\Shared\CasgemMicroservice.Shared\CasgemMicroservice.Shared.csproj" />
     <ProjectReference Include="..\..\Core\CasgemMicroservice.Services.Order.Core.Application\CasgemMicroservice.Services.Order.Core.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\CasgemMicroservice.Services.Order.Persistance\CasgemMicroservice.Services.Order.Persistance.csproj" />
   </ItemGroup>

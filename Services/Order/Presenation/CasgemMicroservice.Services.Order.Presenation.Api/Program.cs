@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using CasgemMicroservice.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<OrderContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); 
 builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ISharedIdentityService,SharedIdentityService>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
