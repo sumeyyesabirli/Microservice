@@ -12,8 +12,8 @@
     "CasgemMicroservice.Services.Cargo.WebApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "false",
+      "launchBrowser": false,
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5016",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

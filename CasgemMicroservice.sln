@@ -67,7 +67,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroServices.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Cargo.WebApi", "Services\Cargo\CasgemMicroservice.Services.Cargo.WebApi\CasgemMicroservice.Services.Cargo.WebApi.csproj", "{34514A1F-1E3C-4B9F-8319-7D89307D1D31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Payment.WepApi", "Services\Payment\CasgemMicroservice.Services.Payment.WepApi\CasgemMicroservice.Services.Payment.WepApi.csproj", "{142A3666-99B1-4547-98A5-D258B1DC3B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services.Payment.WepApi", "Services\Payment\CasgemMicroservice.Services.Payment.WepApi\CasgemMicroservice.Services.Payment.WepApi.csproj", "{142A3666-99B1-4547-98A5-D258B1DC3B5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Getway", "Getways\CasgemMicroservice.Getway\CasgemMicroservice.Getway.csproj", "{42257A0E-8468-440F-95C1-2F4EC07C8BDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{142A3666-99B1-4547-98A5-D258B1DC3B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{142A3666-99B1-4547-98A5-D258B1DC3B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{142A3666-99B1-4547-98A5-D258B1DC3B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42257A0E-8468-440F-95C1-2F4EC07C8BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42257A0E-8468-440F-95C1-2F4EC07C8BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42257A0E-8468-440F-95C1-2F4EC07C8BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42257A0E-8468-440F-95C1-2F4EC07C8BDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{F365177A-34F7-4B85-8563-4BDD223B6C59} = {729535BA-0C90-473D-A82C-8B1CCDA821F8}
 		{34514A1F-1E3C-4B9F-8319-7D89307D1D31} = {729535BA-0C90-473D-A82C-8B1CCDA821F8}
 		{142A3666-99B1-4547-98A5-D258B1DC3B5F} = {C1E3F508-B2B7-42EA-81C7-F165931F8F9A}
+		{42257A0E-8468-440F-95C1-2F4EC07C8BDE} = {6A1A6B75-D4D8-43DB-AA0C-47E8471054F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8EF4AC3-C738-46C4-91D5-68A9618EBDCF}
