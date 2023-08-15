@@ -14,20 +14,15 @@ namespace CasgemMicroservice.Services.Cargo.DataAccesLayer.Migrations
                 {
                     CargoStateID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CargoStateID1 = table.Column<int>(type: "int", nullable: true)
+                    CargoStateDescirption = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CargoStates", x => x.CargoStateID);
-                    table.ForeignKey(
-                        name: "FK_CargoStates_CargoStates_CargoStateID1",
-                        column: x => x.CargoStateID1,
-                        principalTable: "CargoStates",
-                        principalColumn: "CargoStateID");
                 });
 
             migrationBuilder.CreateTable(
-                name: "CargoDetailes",
+                name: "CargoDetails",
                 columns: table => new
                 {
                     CargoDetailID = table.Column<int>(type: "int", nullable: false)
@@ -37,9 +32,9 @@ namespace CasgemMicroservice.Services.Cargo.DataAccesLayer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CargoDetailes", x => x.CargoDetailID);
+                    table.PrimaryKey("PK_CargoDetails", x => x.CargoDetailID);
                     table.ForeignKey(
-                        name: "FK_CargoDetailes_CargoStates_CargoStateID",
+                        name: "FK_CargoDetails_CargoStates_CargoStateID",
                         column: x => x.CargoStateID,
                         principalTable: "CargoStates",
                         principalColumn: "CargoStateID",
@@ -47,20 +42,15 @@ namespace CasgemMicroservice.Services.Cargo.DataAccesLayer.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CargoDetailes_CargoStateID",
-                table: "CargoDetailes",
+                name: "IX_CargoDetails_CargoStateID",
+                table: "CargoDetails",
                 column: "CargoStateID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CargoStates_CargoStateID1",
-                table: "CargoStates",
-                column: "CargoStateID1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CargoDetailes");
+                name: "CargoDetails");
 
             migrationBuilder.DropTable(
                 name: "CargoStates");

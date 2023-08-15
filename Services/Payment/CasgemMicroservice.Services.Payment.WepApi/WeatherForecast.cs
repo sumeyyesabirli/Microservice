@@ -1,4 +1,4 @@
-namespace CasgemMicroservice.Services.Cargo.WebApi
+namespace CasgemMicroservice.Services.Payment.WepApi
 {
     public class WeatherForecast
     {

@@ -15,7 +15,7 @@ namespace CasgemMicroservice.Services.Cargo.DataAccesLayer.Context
             optionsBuilder.UseSqlServer("Server=localhost,1433;Database=CasgemCargoDb;User=sa;Password=123456Aa*");
         }
         public DbSet<CargoState> CargoStates { get; set; }
-        public DbSet<CargoDetail> CargoDetailes { get; set; }
-    
+        public DbSet<CargoDetail> CargoDetails { get; set; }
+
     }
 }
